@@ -11,8 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <div>Bianco Riccardo</div>
-		
-		  <!-- - - - - - ---> 
+		 <!-- - - - - - ---> 
 
         <button id="button-click">clicca qui</button>
         <div id="messaggi">
@@ -32,9 +31,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             function functionTest()
             {
 
-                if (CognomeNome == "" || CognomeNome == "BiancoRiccardo")
+                if (CognomeNome == "" || CognomeNome == "<CognomeNome>")
                 {
-                    alert("Devi inserire BiancoRiccardo");
+                    alert("Devi inserire <CognomeNome>");
                     return;
                 }
 
@@ -50,7 +49,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         messaggio.innerHTML = "";
                         clearInterval(refreshIntervalId);
                         var elem = document.createElement("img");
-                        elem.setAttribute("src", "https://optimap.altervista.org/4AI-GIT/index.php?CognomeNome=" + BiancoRiccardo);
+                        elem.setAttribute("src", "https://optimap.altervista.org/4AI-GIT/index.php?CognomeNome=" + CognomeNome);
                         elem.setAttribute("height", "455");
                         document.getElementById("messaggi").appendChild(elem);
                     }
