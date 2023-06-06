@@ -11,6 +11,58 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
 		<div>FerrariCristian</div>
-    
+     <!-- - - - - - ---> 
+
+        <button id="button-click">clicca qui</button>
+        <div id="messaggi">
+
+        </div>
+
+        <script>
+            var buttonClick = document.getElementById("button-click");
+
+            var CognomeNome = "<CognomeNome>";
+
+            buttonClick.addEventListener('click', functionTest);
+
+            var messaggio = document.getElementById("messaggi");
+
+            var refreshIntervalId;
+            function functionTest()
+            {
+
+                if (CognomeNome == "" || CognomeNome == "<CognomeNome>")
+                {
+                    alert("Devi inserire <CognomeNome>");
+                    return;
+                }
+
+                var start = 10;
+
+                clearInterval(refreshIntervalId);
+                messaggio.innerHTML = "<h1>-" + start + "</h1>";
+                refreshIntervalId = setInterval(() => {
+                    start--
+
+                    if (start == 0)
+                    {
+                        messaggio.innerHTML = "";
+                        clearInterval(refreshIntervalId);
+                        var elem = document.createElement("img");
+                        elem.setAttribute("src", "https://optimap.altervista.org/4AI-GIT/index.php?CognomeNome=" + CognomeNome);
+                        elem.setAttribute("height", "455");
+                        document.getElementById("messaggi").appendChild(elem);
+                    }
+                    else
+                    {
+                        messaggio.innerHTML = "<h1>-" + start + "</h1>"
+                    }
+
+                }, 1000);
+            }
+        </script>
+
+        <!-- - - - - - ---> 
+
 	</body>
 </html>
